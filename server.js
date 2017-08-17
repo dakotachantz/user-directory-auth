@@ -13,28 +13,21 @@ app.set("view engine", "mustache");
 app.use(express.static(path.join(__dirname, "./public")));
 
 app.get("/", (req, res) => {
-    res.render("home", { data: data.users });
+    return res.render("home", { data: data.users });
 });
 
-// app.get("/:name", (req, res) => {
-//     console.log(req.params);
-//     const name = req.params.name;
-//     const data = {
-//         name: name,
-//         people: [{ name: "Tanner", favColor: "red" }, { name: "Jill", favColor: "green" }, { name: "Buffy", favColor: "light blue" }, { name: "Dakota", favColor: "blue" }, { name: "Erin", favColor: "purple" }, { name: "Paul", favColor: "orange" }]
-//     };
-//     res.render("home", );
-// });
+app.get("/profile", (req, res) => {
+    return res.redirect("/");
+});
 
-// app.get("/", (req, res) => {
-//     console.log(req.params);
-//     const name = req.params.name;
-//     const data = {
-//         name: name,
-//         people: [{ name: "Tanner", favColor: "red" }, { name: "Jill", favColor: "green" }, { name: "Buffy", favColor: "light blue" }, { name: "Dakota", favColor: "blue" }, { name: "Erin", favColor: "purple" }, { name: "Paul", favColor: "orange" }]
-//     };
-//     res.render("home", );
-// });
+app.get("/:id", (req, res) => {
+    let id = req.params.id;
+    console.log("id: ", id);
+    let user = data.users.find(user => user.id === parseInt(id));
+    console.log("user: ", user);
+
+    return res.render("profile", { user: user });
+});
 
 
 app.listen(port, () => {

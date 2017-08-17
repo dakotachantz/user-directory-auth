@@ -3,18 +3,16 @@ body {
     font-family: 'Helvetica', sans-serif;
 }
 
-
-/*  
 .container {
     display: flex;
-     flex-direction: column; 
-}  */
+    flex-direction: column;
+}
 
 .grid {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 1em;
     color: #4F5051;
 }
@@ -22,10 +20,10 @@ body {
 .grid-item {
     background-color: white;
     border: solid 1px grey;
-    flex: 1;
-    height: 100%;
-    width: 100%;
-    margin: 1em;
+    /* flex: 1 1 auto; */
+    /* height: 100%;
+    width: 100%; */
+    /* margin: 1em; */
     padding: 0px 1em 1em 1em;
     display: flex;
     justify-content: flex-start;
@@ -45,6 +43,15 @@ body {
 
 .grid-item img {
     margin: 0 auto;
+}
+
+a {
+    margin: 0 auto;
+    flex: 1;
+    text-decoration: none;
+    color: #4F5051;
+    margin: 1em;
+    flex-basis: 5em;
 }
 
 .avail {
