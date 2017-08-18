@@ -8,6 +8,20 @@ body {
     flex-direction: column;
 }
 
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: lightslategray;
+}
+
+i {
+    margin: 1em;
+}
+
 .grid {
     display: flex;
     flex-direction: row;
@@ -19,30 +33,30 @@ body {
 
 .grid-item {
     background-color: white;
-    border: solid 1px grey;
-    /* flex: 1 1 auto; */
-    /* height: 100%;
-    width: 100%; */
-    /* margin: 1em; */
+    border: solid 1px lightgrey;
     padding: 0px 1em 1em 1em;
     display: flex;
     justify-content: flex-start;
-    /* align-items: center; */
     flex-direction: column;
-    /* width: 200px; */
+    width: 17.5vw;
+    height: 40vh;
 }
 
 .grid-item h2 {
-    margin: 0;
-    color: #6087FF;
+    font-size: 1.3em;
+    color: lightslategray;
 }
 
 .grid-item p {
     margin: 0;
+    font-size: .8em;
 }
 
 .grid-item img {
+    align-self: center;
     margin: 0 auto;
+    height: 23vh;
+    width: 15vw;
 }
 
 a {
@@ -56,4 +70,63 @@ a {
 
 .avail {
     color: red;
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.5em;
+    font-size: .9em;
+    color: #4F5051;
+    height: 60vh;
+}
+
+.profile-img {
+    border: 1px solid darkgrey;
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+    margin: 1em;
+    float: left;
+}
+
+.profile-content {
+    width: 60vw;
+    height: 40vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile-content h1 {
+    font-size: 2.5em;
+    margin: .2em 0 0 0;
+    padding: .5em;
+    font-weight: lighter;
+    color: black;
+}
+
+.title {
+    font-weight: bold;
+    margin: 2em;
+    color: black;
+}
+
+.university {
+    margin: .1em 1.5em;
+    align-self: flex-start;
+}
+
+.skills {
+    margin: 0em 3.7em;
+    align-self: flex-start;
+    width: 40vw;
+}
+
+p.skills-list {
+    position: relative;
+    top: -35px;
+    right: -95px;
 }

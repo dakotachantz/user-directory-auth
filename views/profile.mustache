@@ -11,19 +11,39 @@
 </head>
 
 <body>
-    <main class="container">
-        <section>
+    <main class="profile-container">
+        <section class="flex-container">
             {{#user}}
-            <div>
-                <img src="{{avatar}}" alt="picture of robot" height="150px" width="220px">
-                <h2>{{name}}</h2>
-                {{#job}}
-                <p>{{job}}, {{company}}</p>
-                {{/job}}
-
-                {{^job}}
-                <p class="avail">Available for hire</p>
-                {{/job}}
+            <div class="user">
+                <section class="profile-content">
+                <div class="info">
+                <img class="profile-img" src="{{avatar}}" alt="picture of robot" height="150px" width="220px">
+                    <h1>{{name}}</h1>
+                        {{#job}}
+                        {{#address.city}}
+                            <span>{{address.city}}, {{address.country}} | </span><span>{{job}}, {{company}}</span><br>
+                            <span>{{email}} | {{phone}}</span>
+                        {{/address.city}}
+                        
+                        {{^address.city}}
+                            <span>{{address.country}} | {{job}}, {{company}}</span><br>
+                            <span>{{email}} | {{phone}}</span>
+                        {{/address.city}}
+                        {{/job}}
+                        {{^job}}
+                            <span>{{address.city}}, {{address.country}} | </span> <span class="avail">Available for hire</span><br>
+                            <span>{{email}} | {{phone}}</span>
+                        {{/job}}
+                </div>
+                <section class="university">
+                    {{#university}}
+                        <span class="title">Education</span><span>{{university}}</span>
+                    {{/university}}
+                </section>
+                <section class="skills">
+                        <span class="title">Skills</span><p class="skills-list">{{#skills}}{{.}}<br>{{/skills}}</p>
+                </section>
+            </section>
             </div>
             {{/user}}
 

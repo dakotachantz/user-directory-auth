@@ -20,7 +20,7 @@ app.get("/profile", (req, res) => {
     return res.redirect("/");
 });
 
-app.get("/:id", (req, res) => {
+app.get("/profile/:id", (req, res) => {
     let id = req.params.id;
     console.log("id: ", id);
     let user = data.users.find(user => user.id === parseInt(id));

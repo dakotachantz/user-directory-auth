@@ -5,17 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>User Directory</title>
+    <title>Robot Directory</title>
     <link rel="stylesheet" href="/css/main.css">
+    
     
 </head>
 
 <body>
     <main class="container">
+    <header>
+    <i class="fa fa-id-card-o" aria-hidden="true"></i><h1>Robot Directory</h1><i class="fa fa-id-card-o" aria-hidden="true"></i>
+    
+    </header>
+        
         <section class="grid">
-            {{#data}}<a href="/{{id}}">
+            {{#data}}<a href="/profile/{{id}}">
             <div class="grid-item">
-                <img src="{{avatar}}" alt="picture of robot" height="150px" width="220px">
+                <img src="{{avatar}}" alt="picture of robot">
                 <h2>{{name}}</h2>
                 {{#job}}
                 <p>{{job}}, {{company}}</p>
@@ -30,6 +36,7 @@
 
         </section>
     </main>
+    <script src="https://use.fontawesome.com/27763c6ae2.js"></script>
 </body>
 
 </html>
