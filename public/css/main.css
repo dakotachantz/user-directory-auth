@@ -16,6 +16,13 @@ header {
     text-align: center;
     color: #FFFFFF;
     background-color: lightslategray;
+    background-color: #6087FF;
+    font-size: 2em;
+}
+
+header>h1 {
+    font-family: 'Saira', sans-serif;
+    font-weight: lighter;
 }
 
 i {
@@ -44,7 +51,7 @@ i {
 
 .grid-item h2 {
     font-size: 1.3em;
-    color: lightslategray;
+    color: #6087FF;
 }
 
 .grid-item p {
@@ -59,7 +66,7 @@ i {
     width: 15vw;
 }
 
-a {
+.profile-link {
     margin: 0 auto;
     flex: 1;
     text-decoration: none;
@@ -79,7 +86,7 @@ a {
     line-height: 1.5em;
     font-size: .9em;
     color: #4F5051;
-    height: 60vh;
+    height: 40vh;
 }
 
 .profile-img {
@@ -89,6 +96,11 @@ a {
     width: 120px;
     margin: 1em;
     float: left;
+    transition: .5s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.1) translateX(-10%);
 }
 
 .profile-content {
@@ -129,4 +141,51 @@ p.skills-list {
     position: relative;
     top: -35px;
     right: -95px;
+}
+
+.home {
+    font-family: Helvetica, sans-serif;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: white;
+    display: flex;
+}
+
+.home a {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    position: relative;
+    padding: .5em .9em;
+    background: #6087FF;
+    border: none;
+    color: white;
+    transition: .4s;
+}
+
+.home a:hover {
+    background-color: #4C6ED3;
+    transform: scale(1.1);
+}
+
+.top {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 10vh;
+}
+
+.top a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: .3em;
+    width: .3em;
+    padding: .5em;
+    border-radius: 100%;
+    border: 1px solid #6087FF;
 }

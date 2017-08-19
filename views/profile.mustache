@@ -7,48 +7,43 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>User Directory</title>
     <link rel="stylesheet" href="/css/main.css">
-    
+
 </head>
 
 <body>
+    <span class="home"><a href="/"><span class="fa fa-home"></span></a>
+    </span>
     <main class="profile-container">
         <section class="flex-container">
             {{#user}}
             <div class="user">
                 <section class="profile-content">
-                <div class="info">
-                <img class="profile-img" src="{{avatar}}" alt="picture of robot" height="150px" width="220px">
-                    <h1>{{name}}</h1>
-                        {{#job}}
-                        {{#address.city}}
-                            <span>{{address.city}}, {{address.country}} | </span><span>{{job}}, {{company}}</span><br>
-                            <span>{{email}} | {{phone}}</span>
-                        {{/address.city}}
-                        
-                        {{^address.city}}
-                            <span>{{address.country}} | {{job}}, {{company}}</span><br>
-                            <span>{{email}} | {{phone}}</span>
-                        {{/address.city}}
-                        {{/job}}
-                        {{^job}}
-                            <span>{{address.city}}, {{address.country}} | </span> <span class="avail">Available for hire</span><br>
-                            <span>{{email}} | {{phone}}</span>
-                        {{/job}}
-                </div>
-                <section class="university">
-                    {{#university}}
-                        <span class="title">Education</span><span>{{university}}</span>
-                    {{/university}}
+                    <div class="info">
+                        <img class="profile-img" src="{{avatar}}" alt="picture of robot" height="150px" width="220px">
+                        <h1>{{name}}</h1>
+                        {{#job}} {{#address.city}}
+                        <span>{{address.city}}, {{address.country}} | </span><span>{{job}}, {{company}}</span><br>
+                        <span>{{email}} | {{phone}}</span> {{/address.city}} {{^address.city}}
+                        <span>{{address.country}} | {{job}}, {{company}}</span><br>
+                        <span>{{email}} | {{phone}}</span> {{/address.city}} {{/job}} {{^job}}
+                        <span>{{address.city}}, {{address.country}} | </span> <span class="avail">Available for hire</span><br>
+                        <span>{{email}} | {{phone}}</span> {{/job}}
+                    </div>
+                    <section class="university">
+                        {{#university}}
+                        <span class="title">Education</span><span>{{university}}</span> {{/university}}
+                    </section>
+                    <section class="skills">
+                        <span class="title">Skills</span>
+                        <p class="skills-list">{{#skills}}{{.}}<br>{{/skills}}</p>
+                    </section>
                 </section>
-                <section class="skills">
-                        <span class="title">Skills</span><p class="skills-list">{{#skills}}{{.}}<br>{{/skills}}</p>
-                </section>
-            </section>
             </div>
             {{/user}}
 
         </section>
     </main>
+    <script src="https://use.fontawesome.com/27763c6ae2.js"></script>
 </body>
 
 </html>
