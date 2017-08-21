@@ -7,8 +7,6 @@ const profileRoutes = require("./routes/profileRoutes");
 const app = express();
 const port = process.env.PORT || 8880;
 
-// import the profile router
-// use "/profile" 
 app.engine("mustache", mustacheExpress());
 app.set("views", "./views");
 app.set("view engine", "mustache");
