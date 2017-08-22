@@ -40,6 +40,35 @@ app.get("/", (req, res) => {
     });
 });
 
+app.get("/employed", (req, res) => {
+    Users.find({ job: { $ne: null } }).toArray((err, employedUsers) => {
+        if (err) res.status(500).send(err);
+        res.render("home", { data: employedUsers });
+    });
+});
+
+app.get("/lookingforwork", (req, res) => {
+    Users.find({ job: null }).toArray((err, unemployedUsers) => {
+        if (err) res.status(500).send(err);
+        res.render("home", { data: unemployedUsers });
+    });
+});
+
+app.get("/university", (req, res) => {
+    Users.find({ university: { $ne: null } }).toArray((err, universityUsers) => {
+        if (err) res.status(500).send(err);
+        res.render("home", { data: universityUsers });
+    });
+});
+
+app.get("/nouniversity", (req, res) => {
+    Users.find({ university: null }).toArray((err, noUniversityUsers) => {
+        if (err) res.status(500).send(err);
+        res.render("home", { data: noUniversityUsers });
+    });
+});
+
+
 app.get("/users/:id", (req, res) => {
     Users.findOne({ _id: ObjectId(req.params.id) }, function (err, foundUser) {
         if (err) res.status(500).send(err);
