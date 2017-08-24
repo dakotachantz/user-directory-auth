@@ -1,11 +1,12 @@
-# Return to Robots
+# Self-Managed Robots
 
-Using the MongoDB Node library, create the LinkedIn for Robots project.
+Update your directory of robots to allow for authentication and update.
+---
 
-In week 1 of Back-End Fundamentals, you built a directory site with job and skill information for robots.
+Twice you have worked on a directory of robots looking for jobs, once from an array of objects, and then from data stored in MongoDB. 
 
-Today, you should download the same data you used in that project.
+* For this project, you will take that second version and add             authentication and editing. 
 
-* Load this data into MongoDB and rebuild the directory site. You will have to query the database via     the MongoDB library `(mongodb)` to get this data.
+* Your project should allow for each robot -- or human user -- to log into the directory and edit their entry. 
 
-* This time, add links at the top of the page to go to a page of robots that are currently looking for    work and a page of robots that are currently employed.
+* In addition, new users should be able to sign up for the directory and add their own entry.
