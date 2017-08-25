@@ -14,6 +14,21 @@ body {
     width: 100%;
 }
 
+a {
+    color: white;
+    font-family: 'Helvetica', sans-serif;
+    font-weight: lighter;
+    text-decoration: none;
+}
+
+.signup-link {
+    color: black;
+}
+
+.selected {
+    color: darkslategray;
+}
+
 nav {
     display: flex;
     flex-direction: row;
@@ -30,7 +45,7 @@ nav {
 }
 
 nav>h1 {
-    font-family: 'Saira', sans-serif;
+    /* font-family: 'Saira', sans-serif; */
     font-weight: lighter;
     margin: .5em 0;
     font-size: 1em;
@@ -40,7 +55,7 @@ nav>h1 {
     text-decoration: none;
     cursor: pointer;
     color: white;
-    font-family: 'Saira', sans-serif;
+    /* font-family: 'Saira', sans-serif; */
     font-weight: lighter;
     font-size: 2.5em;
 }
@@ -53,6 +68,12 @@ nav>h1 {
     background: rgba(0, 0, 0, 0.0);
     box-shadow: none;
     transition: .3s ease;
+}
+
+button {
+    font-family: 'Helvetica', sans-serif;
+    font-weight: lighter;
+    text-decoration: none;
 }
 
 .btn:hover {
@@ -217,6 +238,7 @@ p.skills-list {
     background: #6087FF;
     border: none;
     color: white;
+    font-weight: lighter;
 }
 
 .top {
@@ -241,4 +263,8 @@ p.skills-list {
 
 .top a:hover {
     transform: scale(1.2);
+}
+
+.phantom {
+    width: 3.2em;
 }

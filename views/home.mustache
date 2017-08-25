@@ -20,14 +20,17 @@
         <header>
             <nav class="dropdown">
                 <h1>Robot Directory</h1>
-                <button class="btn btn-default" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Status<span class="caret"></span> 
-                </button>
+                <a class="selected" href="/directory">Home</a>
+                <a href="/users/profile">Profile</a>
+                <a href="/users/logout">Logout</a>
+                <div class="btn btn-default" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Status<span class="caret"></span> 
+                </div>
                 <ul class="dropdown-menu dropdown-menu-right">
-                    <li><a href="/">All</a></li>
-                    <li><a href="/employed">Employed</a></li>
-                    <li><a href="/lookingforwork">Looking For Work</a></li>
-                    <li><a href="/university">Has Degree</a></li>
-                    <li><a href="/nouniversity">No Degree</a></li>
+                    <li><a href="/directory">All</a></li>
+                    <li><a href="/directory/employed">Employed</a></li>
+                    <li><a href="/directory/lookingforwork">Looking For Work</a></li>
+                    <li><a href="/directory/university">Has Degree</a></li>
+                    <li><a href="/directory/nouniversity">No Degree</a></li>
                 </ul>
             </nav>
         </header>
@@ -36,7 +39,12 @@
             {{#data}}
             <a class="profile-link" href="/users/{{_id}}">
                 <div class="grid-item">
-                    <img src="{{avatar}}" alt="picture of robot">
+                    {{#avatar}}
+                    <img src={{avatar}} alt="picture of robot">
+                    {{/avatar}}
+                    {{^avatar}}
+                    <span>No Image Uploaded.</span>
+                    {{/avatar}}
                     <h2>{{name}}</h2>
                     {{#job}}
                     <p>{{job}}, {{company}}</p>

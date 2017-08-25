@@ -7,20 +7,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>User Directory</title>
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
-
+    <link href="https://fonts.googleapis.com/css?family=Saira" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 
 <body>
+    <main class="home-container">
     <header>
-        <nav class="home">
-            <a href="/"><span class="fa fa-home"></span></a>
-            </span>
+        <nav class="dropdown">
+            <h1>Robot Directory</h1>
+            <a href="/directory">Home</a>
+            <a class="selected" href="/users/profile">Profile</a>
+            <a href="/users/logout">Logout</a>
+            <div class="phantom"></div>
         </nav>
     </header>
-    <main class="profile-container">
         <section class="flex-container">
             {{#user}}
             <div class="user">

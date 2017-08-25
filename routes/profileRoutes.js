@@ -1,27 +1,27 @@
 const express = require("express");
 const profileRoutes = express.Router();
+const User = require("../models/User");
 
-// NEW DB INFO
-const mongo = require("mongodb");
-const MongoClient = mongo.MongoClient;
-const ObjectId = mongo.ObjectID;
-const dbUrl = "mongodb://localhost:27017/user-directory"
-let DB;
-let Users;
-
-MongoClient.connect(dbUrl, (err, db) => {
-    if (err) {
-        return console.log("Error connecting to the database:", err);
-    }
-    DB = db;
-    Users = db.collection("users");
+profileRoutes.get("/profile", (req, res) => {
+    res.render("profile", { user: req.session.user });
 });
 
 profileRoutes.get("/:id", (req, res) => {
-    Users.findOne({ _id: ObjectId(req.params.id) }, function (err, foundUser) {
-        if (err) res.status(500).send(err);
-        if (!foundUser) res.send("No user found");
-        res.render("profile", { user: foundUser });
+    User.findById(req.params.id)
+        .then(function (foundUser) {
+            if (!foundUser) res.send("No user found");
+            res.render("profile", { user: foundUser });
+        });
+});
+
+
+profileRoutes.get("/logout", (req, res) => {
+    req.session.destroy(err => {
+        if (err) {
+            res.send("Error logging out");
+        } else {
+            res.redirect("/");
+        }
     });
 });
 
