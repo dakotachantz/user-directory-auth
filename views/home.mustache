@@ -5,11 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Robot Directory</title>
-    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Saira" rel="stylesheet">
+    <title>Directory</title>
     <link rel="stylesheet" href="/css/main.css">
 
 
@@ -18,20 +14,21 @@
 <body id="topofpage">
     <main class="home-container">
         <header>
-            <nav class="dropdown">
-                <h1>Robot Directory</h1>
+            <nav>
+                <h1>Directory</h1>
                 <a class="selected" href="/directory">Home</a>
                 <a href="/users/profile">Profile</a>
-                <a href="/users/logout">Logout</a>
-                <div class="btn btn-default" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Status<span class="caret"></span> 
+                <a href="/logout">Logout</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Filter By</button>
+                    <div class="dropdown-content">
+                        <a href="/directory">All</a>
+                        <a href="/directory/employed">Employed</a>
+                        <a href="/directory/lookingforwork">Looking For Work</a>
+                        <a href="/directory/university">Has Degree</a>
+                        <a href="/directory/nouniversity">No Degree</a>
+                    </div>
                 </div>
-                <ul class="dropdown-menu dropdown-menu-right">
-                    <li><a href="/directory">All</a></li>
-                    <li><a href="/directory/employed">Employed</a></li>
-                    <li><a href="/directory/lookingforwork">Looking For Work</a></li>
-                    <li><a href="/directory/university">Has Degree</a></li>
-                    <li><a href="/directory/nouniversity">No Degree</a></li>
-                </ul>
             </nav>
         </header>
 
@@ -40,11 +37,8 @@
             <a class="profile-link" href="/users/{{_id}}">
                 <div class="grid-item">
                     {{#avatar}}
-                    <img src={{avatar}} alt="picture of robot">
-                    {{/avatar}}
-                    {{^avatar}}
-                    <span>No Image Uploaded.</span>
-                    {{/avatar}}
+                    <img src={{avatar}} alt="picture of robot"> {{/avatar}} {{^avatar}}
+                    <span>No Image Uploaded.</span> {{/avatar}}
                     <h2>{{name}}</h2>
                     {{#job}}
                     <p>{{job}}, {{company}}</p>
@@ -57,9 +51,6 @@
             <span class="home top"><a class="fa fa-angle-up fa-2x" href="#topofpage"></a></span>
         </section>
     </main>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/27763c6ae2.js"></script>
 </body>
 

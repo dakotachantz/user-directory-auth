@@ -5,10 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>User Directory</title>
+    <title>Profile</title>
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Saira" rel="stylesheet">
     <link rel="stylesheet" href="/css/main.css">
 </head>
@@ -16,12 +14,13 @@
 <body>
     <main class="home-container">
     <header>
-        <nav class="dropdown">
-            <h1>Robot Directory</h1>
+        <nav>
+            <h1>Directory</h1>
             <a href="/directory">Home</a>
             <a class="selected" href="/users/profile">Profile</a>
-            <a href="/users/logout">Logout</a>
-            <div class="phantom"></div>
+            <a href="/logout">Logout</a>
+            <a href="/users/profile-edit">Edit Profile</a>
+            
         </nav>
     </header>
         <section class="flex-container">
@@ -29,7 +28,7 @@
             <div class="user">
                 <section class="profile-content">
                     <div class="info">
-                        <img class="profile-img" src="{{avatar}}" alt="picture of robot" height="150px" width="220px">
+                        {{#avatar}}<img class="profile-img" src="{{avatar}}" height="150px" width="220px">{{/avatar}}
                         <h1>{{name}}</h1>
                         {{#job}} {{#address.city}}
                         <span>{{address.city}}, {{address.country}} | </span><span>{{job}}, {{company}}</span><br>
@@ -53,9 +52,6 @@
 
         </section>
     </main>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/27763c6ae2.js"></script>
 </body>
 

@@ -51,4 +51,9 @@ authRoutes.post("/login", (req, res) => {
     });
 });
 
+authRoutes.get("/logout", (req, res) => {
+    req.session.destroy();
+    res.redirect("/");
+});
+
 module.exports = authRoutes;

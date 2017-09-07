@@ -13,7 +13,7 @@ const authRoutes = require("./routes/authRoutes");
 const mongoose = require("mongoose");
 const bluebird = require("bluebird");
 const app = express();
-const port = process.env.PORT || 7770;
+const port = process.env.PORT || 7777;
 
 mongoose.Promise = bluebird;
 mongoose.connect("mongodb://localhost:27017/user-directory");

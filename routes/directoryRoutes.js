@@ -20,7 +20,6 @@ const User = require("../models/User");
 //                     if (!updatedUsers) res.status(500).send("Error saving users!");
 //                 });
 //         })
-
 // });
 
 directoryRoutes.get("/", (req, res) => {
@@ -35,7 +34,7 @@ directoryRoutes.get("/employed", (req, res) => {
     User.find({ job: { $ne: null } })
         .then((employedUsers) => {
             if (!employedUsers) res.status(500).send("No Employed Users.");
-            res.render("home", { data: employedUsers });
+            return res.render("home", { data: employedUsers });
         });
 });
 
@@ -43,21 +42,21 @@ directoryRoutes.get("/lookingforwork", (req, res) => {
     User.find({ job: null })
         .then((unemployedUsers) => {
             if (!unemployedUsers) res.status(500).send("No Unemployed Users.");
-            res.render("home", { data: unemployedUsers });
+            return res.render("home", { data: unemployedUsers });
         });
 });
 
 directoryRoutes.get("/university", (req, res) => {
     User.find({ university: { $ne: null } }).then((universityUsers) => {
         if (!universityUsers) res.status(500).send("No Users Found with Degrees.");
-        res.render("home", { data: universityUsers });
+        return res.render("home", { data: universityUsers });
     });
 });
 
 directoryRoutes.get("/nouniversity", (req, res) => {
     User.find({ university: null }).then((noUniversityUsers) => {
         if (!noUniversityUsers) res.status(500).send("No Users Found without Degrees.");
-        res.render("home", { data: noUniversityUsers });
+        return res.render("home", { data: noUniversityUsers });
     });
 });
 

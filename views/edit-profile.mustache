@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Directory</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body id="topofpage">
+    <main class="home-container">
+        <header>
+            <nav>
+                <h1>Directory</h1>
+                <a class="selected" href="/directory">Home</a>
+                <a href="/users/profile">Profile</a>
+                <a href="/logout">Logout</a>
+        {{#user}}
+            </nav>
+        </header>
+        <section class="edit-sec">
+            <h1>Edit Your Profile Below!</h1>
+            <form class="edit-form" action="/users/updateuser/{{_id}}" method="post" class="signup-form">
+                <label for="name">Name: </label>
+                <input type="text" name="name" value="{{name}}" placeholder="{{name}}"><br>
+                <label for="email">Email: </label>
+                <input type="email" name="email" value="{{email}}"placeholder="{{email}}"><br>
+                <label for="university">University: </label>
+                <input type="text" name="university" value="{{university}}"placeholder="{{university}}"><br>
+                <label for="job">Job: </label>
+                <input type="text" name="job" value="{{job}}"placeholder="{{job}}"><br>
+                <label for="company">Company: </label>
+                <input type="text" name="company" value="{{company}}"placeholder="{{company}}"><br>
+                <label for="phone">Phone Number: </label>
+                <input type="tel" name="phone" value="{{phone}}" placeholder="{{phone}}"><br>
+                <label for="skills">Skills: </label>
+                <input type="text" name="skills" value="{{skills}}" placeholder="{{skills}}"><br>
+                <label for="address">Address: </label>
+                <input type="text" name="address" value="{{address}}"placeholder="{{address}}"><br>
+                <label for="username">Username: </label>
+                <input type="text" name="username" value="{{username}}" placeholder="{{username}}"><br>
+                <label for="password">Password: </label>
+                <input type="password" name="password" value="{{password}}"><br>
+                <button type="submit">Update</button>
+            </form>
+            <form class="delete-form" action="/users/deleteuser/{{_id}}" method="post">
+                <button id="delete" class="button" type="submit">Delete Account</button>
+            </form>
+        </section>
+        {{/user}}
+    </main>
+    <script src="https://use.fontawesome.com/27763c6ae2.js"></script>
+</body>
+</html>
